@@ -10,11 +10,6 @@ jobs:
   push_image_github:
     runs-on: ubuntu-latest
     name: Push to Github Registry
-    needs:
-      - api_tests_with_auth
-      - api_tests_without_auth
-      - api_tests_with_ssl
-      - unit_tests
     if: ${{ (github.ref == 'refs/heads/main') || (startsWith(github.event.ref, 'refs/tags/v')) }}
     steps:
       - uses: actions/checkout@v2
