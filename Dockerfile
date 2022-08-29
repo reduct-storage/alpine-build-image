@@ -7,4 +7,5 @@ WORKDIR /install
 RUN pip3 install conan==1.51.1
 RUN wget https://raw.githubusercontent.com/reduct-storage/reduct-storage/main/conanfile.txt
 
-RUN conan install . --build=* --settings=compiler.libcxx=libstdc++11
+RUN conan install . --build=* -s compiler.libcxx=libstdc++11 -s build_type=Release
+RUN conan install . --build=* -s compiler.libcxx=libstdc++11 -s build_type=Debug
