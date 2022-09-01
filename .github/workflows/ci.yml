@@ -27,7 +27,7 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
         with:
-          platforms: ["arm64", "amd64"]
+          platforms: "arm64,amd64"
       - name: Build and push Docker image to GitHub repo
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
