@@ -7,9 +7,8 @@ on:
   pull_request:
     branches: [ main ]
 jobs:
-  push_image_github:
+  build_and_push:
     runs-on: ubuntu-latest
-    name: Push to Github Registry
     if: ${{ (github.ref == 'refs/heads/main') || (startsWith(github.event.ref, 'refs/tags/v')) }}
     steps:
       - uses: actions/checkout@v2
@@ -25,7 +24,10 @@ jobs:
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: ghcr.io/${{github.repository}}
-
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+        with:
+          platforms: ["arm64", "amd64"]
       - name: Build and push Docker image to GitHub repo
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
