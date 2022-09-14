@@ -1,6 +1,6 @@
 FROM alpine:3.16
 
-RUN apk --no-cache add gcc g++ cmake make python3 py3-pip wget pythonispython3 perl linux-headers
+RUN apk --no-cache add gcc g++ cmake make python3 py3-pip wget pythonispython3 perl linux-headers zip
 
 WORKDIR /install
 
