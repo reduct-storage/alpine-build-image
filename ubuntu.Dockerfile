@@ -1,6 +1,7 @@
 FROM ubuntu:22.04
 
-RUN apk --no-cache add gcc g++ cmake make python3 py3-pip wget pythonispython3 perl linux-headers zip
+RUN apt update && apt install -y cmake python3-pip zip
+
 
 WORKDIR /install
 
