@@ -7,10 +7,10 @@ Both images fetch conanfile.txt from the ReductStore repository and build conan 
 
 * CI image based on Alpine Linux 3.16
 * Debug and Release builds
-* Repository: ghcr.io/alpine_build_image
+* Repository: ghcr.io/reductstore/build_image:alpine
 
 ### ubuntu.Dockerfile
 
 * Deploy image based on Ubuntu 20.04
 * Release build
-* Repository: ghcr.io/ubuntu_deploy_image
+* Repository: ghcr.io/reductstore/build_image:ubuntu
